@@ -1,20 +1,21 @@
 const express = require("express");
-const morgan = require("morgan");
 const mongoose = require("mongoose");
 
 const projectsRouter = require("./Routes/projectRoutes");
 const languageRouter = require("./Routes/languagesRoutes");
 
 const app = express();
+
+// Morgan
+if (process.env.NODE_ENV === "development") {
+  const morgan = require("morgan");
+  app.use(morgan("dev"));
+}
+
 const port = process.env.PORT;
 
 // Parsing Body
 app.use(express.json());
-
-// Morgan
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
 
 // Connect to Database
 mongoose.set("strictQuery", false);
