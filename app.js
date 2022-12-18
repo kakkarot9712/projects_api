@@ -12,7 +12,9 @@ const port = process.env.PORT;
 app.use(express.json());
 
 // Morgan
-app.use(morgan("dev"));
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 // Connect to Database
 mongoose.set("strictQuery", false);
