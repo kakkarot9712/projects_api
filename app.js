@@ -8,6 +8,7 @@ const xss = require("xss-clean");
 
 const projectsRouter = require("./Routes/projectRoutes");
 const languageRouter = require("./Routes/languagesRoutes");
+const toolsRouter = require("./Routes/toolsRoute");
 
 const app = express();
 const port = process.env.PORT || 7000;
@@ -92,6 +93,7 @@ app.use((req, res, next) => {
 // Routes
 app.use("/api/v1/projects", projectsRouter);
 app.use("/api/v1/languages", languageRouter);
+app.use("/api/v1/tools", toolsRouter);
 
 // Allow Scoped access to file system
 app.use(express.static(`${__dirname}/public`));
