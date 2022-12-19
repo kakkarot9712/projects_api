@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-const port = process.env.PORT;
+const port = process.env.PORT || 7000;
 
 // Parsing Body
 app.use(express.json());
