@@ -94,6 +94,11 @@ app.use((req, res, next) => {
 app.use("/api/v1/projects", projectsRouter);
 app.use("/api/v1/languages", languageRouter);
 app.use("/api/v1/tools", toolsRouter);
+app.use("/api/v1/dummy", (req, res, next) => {
+  res.status(200).json({
+    status: "ping success",
+  });
+});
 
 // Allow Scoped access to file system
 app.use(express.static(`${__dirname}/public`));
