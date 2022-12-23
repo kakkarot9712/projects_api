@@ -43,9 +43,6 @@ app.use(xss());
 // Use configured Limiter
 app.use("/api", limiter);
 
-// Add secure Headers
-app.use(helmet());
-
 // =========== Error handling ==========
 
 // Handling Node Errors
@@ -55,14 +52,6 @@ process.on("unhandledRejection", (err) => {
 
 process.on("uncaughtException", (err) => {
   console.log(err.message, err.name);
-});
-
-// Global Error Handling
-app.use((err, req, res, next) => {
-  res.status(500).json({
-    status: "fail",
-    error: err.message,
-  });
 });
 
 // ============= Setting up api functions =============
@@ -102,6 +91,14 @@ app.use("/api/v1/dummy", (req, res, next) => {
 
 // Allow Scoped access to file system
 app.use(express.static(`${__dirname}/public`));
+
+// Global Error Handling
+app.use((err, req, res, next) => {
+  res.status(500).json({
+    status: "fail",
+    error: err.message,
+  });
+});
 
 // Start the server
 app.listen(port, () => console.log(`Listening to port ${port}`));

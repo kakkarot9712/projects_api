@@ -4,6 +4,7 @@ const languageSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "Language name is required"],
+    unique: [true, "Provided name is already exists in database"],
   },
 });
 
