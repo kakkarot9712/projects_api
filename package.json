@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "start-dev":"nodemon app.js --dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vikalp Gandha",
@@ -20,6 +21,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   }

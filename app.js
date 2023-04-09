@@ -10,6 +10,8 @@ const projectsRouter = require("./Routes/projectRoutes");
 const languageRouter = require("./Routes/languagesRoutes");
 const toolsRouter = require("./Routes/toolsRoute");
 
+if(process.argv[2] === '--dev') require('dotenv').config()
+
 const app = express();
 const port = process.env.PORT || 7000;
 
