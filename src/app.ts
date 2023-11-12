@@ -4,7 +4,6 @@ import { rateLimit } from "express-rate-limit";
 // import cors from "cors";
 import helmet from "helmet";
 import { errorHandler } from "./utils/errorHandler";
-import morgan from "morgan";
 import { config } from "dotenv";
 import projectRouter from "./routes/projectRoutes";
 import languageRouter from "./routes/languagesRoutes";
@@ -32,8 +31,8 @@ const limiter = rateLimit({
   message: "Too many request from IP, try again later",
 });
 
-// Morgan
-app.use(morgan("dev"));
+// // Morgan
+// app.use(morgan("dev"));
 
 // Use configured Limiter
 app.use("/api", limiter);
