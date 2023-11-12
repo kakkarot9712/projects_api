@@ -35,7 +35,7 @@ const limiter = rateLimit({
 // app.use(morgan("dev"));
 
 // Use configured Limiter
-app.use("/api", limiter);
+app.use("/", limiter);
 
 // app.use(
 //   cors({
