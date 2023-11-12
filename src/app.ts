@@ -1,10 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import { rateLimit } from "express-rate-limit";
-// import cors from "cors";
+import cors from "cors";
 import helmet from "helmet";
 import { errorHandler } from "./utils/errorHandler";
-import morgan from "morgan";
 import { config } from "dotenv";
 import projectRouter from "./routes/projectRoutes";
 import languageRouter from "./routes/languagesRoutes";
@@ -32,20 +31,20 @@ const limiter = rateLimit({
   message: "Too many request from IP, try again later",
 });
 
-// Morgan
-app.use(morgan("dev"));
+// // Morgan
+// app.use(morgan("dev"));
 
 // Use configured Limiter
-app.use("/api", limiter);
+app.use("/", limiter);
 
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//     credentials: true,
-//     // access-control-allow-credentials:true
-//     optionsSuccessStatus: 200,
-//   })
-// );
+app.use(
+  cors()
+  // {
+  // origin: "http://localhost:3000",
+  // access-control-allow-credentials:true
+  // optionsSuccessStatus: 200,
+  // }
+);
 
 // Routes
 app.use("/projects", projectRouter);

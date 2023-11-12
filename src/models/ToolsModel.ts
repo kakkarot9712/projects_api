@@ -6,6 +6,11 @@ const toolSchema = new mongoose.Schema({
     required: [true, "tool name is required"],
     unique: [true, "Provided name is already exists in database"],
   },
+  svg_gdrive_id: {
+    type: String,
+    required: [true, "Gdrive ID is requires"],
+    unique: [true, "Gdrive Id should be unique"],
+  },
 });
 
 const Tool = mongoose.model("Tool", toolSchema);

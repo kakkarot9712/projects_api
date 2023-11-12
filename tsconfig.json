@@ -6,7 +6,7 @@
     "experimentalDecorators": true /* Enable experimental support for legacy experimental decorators. */,
 
     /* Modules */
-    "module": "ES6" /* Specify what module code is generated. */,
+    "module": "CommonJS" /* Specify what module code is generated. */,
     // "rootDir": "./src" /* Specify the root folder within your source files. */,
     // "sourceMap": true /* Create source map files for emitted JavaScript files. */,
     "outDir": "./dist" /* Specify an output folder for all emitted files. */,
