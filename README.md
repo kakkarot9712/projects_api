@@ -1,10 +1,6 @@
+### This Code is not used for my portfolio anymore, I have created the same APIs in Rust as my first practice project, which is [here](https://github.com/kakkarot9712/projects_api_rust). 
 # Portfolio API
 Simple API to retrieve stored portfolio metadata from database using supported endpoints, created using Node.js, ExpressJS, mongoDB for database.
-
-This API is used in my [Portfolio](https://vikalpg.in) Website.
-<br />
-
-To check the API that is used in the Portfolio Website take url `https://vikalpg.in/api/v1` as a base url and then you can test the below endpoints.
 
 # Supported Endpoints
 
